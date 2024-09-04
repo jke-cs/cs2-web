@@ -3,7 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/jke-cs/cs2-web?style=for-the-badge)
 ![GitHub all releases](https://img.shields.io/github/downloads/jke-cs/cs2-web/total?style=for-the-badge)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jke-cs/cs2-web/main?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/jke-cs/cs2-web/style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/jke-cs/cs2-web?style=for-the-badge)
 
 # cs2-web
 
