@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FaCopy } from 'react-icons/fa'; // Stelle sicher, dass du react-icons installiert hast
+import { FaCopy } from 'react-icons/fa'; 
 import { useEffect } from 'react';
 import axios from 'axios';
 
@@ -21,7 +21,7 @@ export default function Home() {
 useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axios.get('/api/route'); // Passe den Pfad zur API-Routingdatei an
+      const response = await axios.get('/api/route'); 
       setTableData(response.data);
     } catch (error) {
       console.error('Failed to fetch data:', error);
@@ -37,7 +37,6 @@ useEffect(() => {
   };
   return (
     <div className="flex relative min-h-screen overflow-hidden">
-      {/* Hintergrund SVG */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/bg-cbble.svg')] bg-cover bg-center z-[-1]"></div>
       
 <header className="w-full bg-red-600 text-white text-center py-1.5 fixed top-0 left-[65px] z-50 opacity-80 " style={{ height: '40px' }}>
@@ -45,7 +44,6 @@ useEffect(() => {
 </header>
 
 
-      {/* Navigationsleiste */}
       <nav className="fixed top-0 left-0 h-full w-16 bg-gray-900 flex flex-col items-center py-4">
         <a 
           href="#section1" 
@@ -142,10 +140,8 @@ useEffect(() => {
       <main className="flex-1 min-h-screen flex flex-col items-center justify-because p-24 ml-16 relative z-10">
       
 
-  {/* Spielerstatistiken Tabelle */}
   <div className="relative z-[-1] flex place-items-center before:absolute before:h-[10px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-0 after:h-[100px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]"></div>
 
-  {/* Conditional Rendering der Widgets basierend auf dem aktiven Abschnitt */}
   <div className="mb-24 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
     {activeSection === 'home' && (
       <>
@@ -163,8 +159,8 @@ useEffect(() => {
                 <Image
                   src="/surf_utopia.svg"
                   alt="Surf KZ"
-                  width={400} // Anpassen, falls nötig
-                  height={100} // Anpassen, falls nötig
+                  width={400}
+                  height={100}
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -194,8 +190,8 @@ useEffect(() => {
                 <Image
                   src="/surf_nyx.svg"
                   alt="Surf Nyx"
-                  width={400} // Anpassen, falls nötig
-                  height={100} // Anpassen, falls nötig
+                  width={400}
+                  height={100}
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -225,8 +221,8 @@ useEffect(() => {
                 <Image
                   src="/surf_me.svg"
                   alt="Surf Me"
-                  width={400} // Anpassen, falls nötig
-                  height={100} // Anpassen, falls nötig
+                  width={400}
+                  height={100} 
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -256,8 +252,8 @@ useEffect(() => {
                 <Image
                   src="/surf_rookie.svg"
                   alt="Surf Rookie"
-                  width={400} // Anpassen, falls nötig
-                  height={100} // Anpassen, falls nötig
+                  width={400}
+                  height={100}
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -287,8 +283,8 @@ useEffect(() => {
                 <Image
                   src="/surf_boreas.svg"
                   alt="Surf Boreas"
-                  width={400} // Anpassen, falls nötig
-                  height={100} // Anpassen, falls nötig
+                  width={400}
+                  height={100}
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -305,14 +301,12 @@ useEffect(() => {
               </a>
             </>
           )}
-        {/* Discord Widget */}
 <div className="absolute top-24 left-0 ml-8">
 <iframe src="https://discord.com/widget?id=371718546121556002&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 </div>
   
 <div className="absolute top-24 right-8 bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
   <p className="text-center text-lg font-semibold mb-4">
-    {/* Optionaler Begrüßungstext hier */}
   </p>
   <div className="text-sm">
     <h3 className="font-semibold mb-2">Roadmap:</h3>
@@ -330,7 +324,6 @@ useEffect(() => {
 
 <div className="absolute right-8 bg-orange-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50" style={{ top: '70%' }}>
   <p className="text-center text-lg font-semibold mb-4">
-    {/* Optionaler Begrüßungstext hier */}
   </p>
   <div className="text-sm">
     <h3 className="font-semibold mb-2">Credits:</h3>
@@ -360,8 +353,8 @@ useEffect(() => {
     <Image
       src="/skins.svg"
       alt="Skins"
-      width={400} // Anpassen, falls nötig
-      height={100} // Anpassen, falls nötig
+      width={400}
+      height={100}
       className="mb-3"
     />
     <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -411,10 +404,10 @@ useEffect(() => {
       </span>
     </h2>
     <Image
-      src="/aim_redline.svg" // Bild wie bei der KZ-Sektion
+      src="/aim_redline.svg" 
       alt="Arena"
-      width={400} // Anpassen, falls nötig
-      height={100} // Anpassen, falls nötig
+      width={400}
+      height={100} 
       className="mb-3"
     />
     <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -446,8 +439,8 @@ useEffect(() => {
               <Image
                 src="/kz_skytower.svg"
                 alt="Mirage"
-                width={400} // Anpassen, falls nötig
-                height={100} // Anpassen, falls nötig
+                width={400} 
+                height={100}
                 className="mb-3"
               />
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -477,10 +470,10 @@ useEffect(() => {
                 </span>
               </h2>
               <Image
-                src="/mirage.svg" // Bild wie bei der Home-Sektion
+                src="/mirage.svg"
                 alt="DM #1"
-                width={400} // Anpassen, falls nötig
-                height={100} // Anpassen, falls nötig
+                width={400}
+                height={100}
                 className="mb-3"
               />
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
