@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+/* styles/globals.css */
+.player-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2E2E2E;
+  color: #E0E0E0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.player-stats-table th, .player-stats-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.player-stats-table th {
+  background-color: #333;
+}
+
+.player-stats-table tr:hover {
+  background-color: #555;
+}
+
+.global-points-cell {
+  background-size: 75px 35px;
+  background-repeat: no-repeat;
+  background-position: center; 
+  height: 49px;
+  width: 80px;
+  font-family: "HighSpeed", sans-serif; 
+  font-weight: bold; 
+  font-style: italic; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+}
+
+.global-points-heading {
+  text-align: left;
+  padding-left: 20px;
+}
