@@ -302,7 +302,14 @@ useEffect(() => {
             </>
           )}
 <div className="absolute top-24 left-0 ml-8">
-<iframe src="https://discord.com/widget?id=371718546121556002&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<iframe 
+  src="https://discord.com/widget?id=371718546121556002&theme=dark" 
+  width="350" 
+  height="500" 
+  allowTransparency={true} 
+  frameBorder="0" 
+  sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+</iframe>
 </div>
   
 <div className="absolute top-24 right-8 bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
