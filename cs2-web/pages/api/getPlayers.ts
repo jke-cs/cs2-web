@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const connection = await mysql.createConnection(dbConfig);
-    const [rows] = await connection.execute('SELECT * FROM playerstats ORDER BY GlobalPoints DESC');
+    const [rows] = await connection.execute('SELECT * FROM PlayerStats ORDER BY GlobalPoints DESC');
     await connection.end();
     res.status(200).json(rows);
   } catch (error) {
