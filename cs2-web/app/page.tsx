@@ -87,7 +87,6 @@ export default function Home() {
 </header>
  
 
-      {/* Navigationsleiste */}
       <nav className="fixed top-0 left-0 h-full w-16 bg-gray-900 flex flex-col items-center py-4">
         <a 
           href="#SURF" 
@@ -428,52 +427,89 @@ export default function Home() {
 )}
   
 {activeSection === 'best' && (
-  <div className="container mx-auto px-4 py-8 ml-[-315px]"> 
-    <div className="mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden" style={{ width: '1000px' }}> 
-      <table className="w-full table-fixed divide-y divide-gray-700">
-        <thead className="bg-gray-900">
-          <tr>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Rank</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Player Name</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Global Points</th>
-          </tr>
-        </thead>
-        <tbody className="bg-gray-800 divide-y divide-gray-700">
-          {currentPlayers.map((player, index) => (
-            <tr key={player.SteamID} className="hover:bg-gray-700 transition-colors">
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300">{indexOfFirstPlayer + index + 1}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{player.PlayerName}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
-                <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  {player.GlobalPoints}
-                </span>
-              </td>
+  <div className="container mx-auto px-4 py-8 flex">
+    <div className="flex-grow">
+
+      <div className="bg-gray-800 shadow-lg rounded-lg overflow-hidden" style={{ width: '800px' }}>
+        <table className="w-full table-fixed divide-y divide-gray-700">
+          <thead className="bg-gray-900">
+            <tr>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Rank</th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Player Name</th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Global Points</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-gray-800 divide-y divide-gray-700">
+            {currentPlayers.map((player, index) => {
+              let bgColor = 'bg-green-100 text-green-800'; // Default color
+              if (index === 0) {
+                bgColor = 'bg-purple-500 text-purple-100'; // Rank 1
+              } else if (index === 1) {
+                bgColor = 'bg-red-500 text-red-100'; // Rank 2
+              } else if (index === 2) {
+                bgColor = 'bg-orange-500 text-orange-100'; // Rank 3
+              }
+
+              return (
+                <tr key={player.SteamID} className="hover:bg-gray-700 transition-colors">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300">{indexOfFirstPlayer + index + 1}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{player.PlayerName}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${bgColor}`}>
+                      {player.GlobalPoints}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div className="mt-4 flex justify-between items-center">
+          <button
+            onClick={() => paginate(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
+          >
+            <FaChevronLeft />
+          </button>
+          <span className="text-sm text-gray-700">
+            Page {currentPage} of {Math.ceil(players.length / playersPerPage)}
+          </span>
+          <button
+            onClick={() => paginate(currentPage + 1)}
+            disabled={currentPage === Math.ceil(players.length / playersPerPage)}
+            className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
+          >
+            <FaChevronRight />
+          </button>
+        </div>
+      </div>
     </div>
-    <div className="mt-4 flex justify-between items-center" style={{ width: '1000px', margin: '0 auto' }}> 
-      <button
-        onClick={() => paginate(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
-      >
-        <FaChevronLeft />
-      </button>
-      <span className="text-sm text-gray-700">
-        Page {currentPage} of {Math.ceil(players.length / playersPerPage)}
-      </span>
-      <button
-        onClick={() => paginate(currentPage + 1)}
-        disabled={currentPage === Math.ceil(players.length / playersPerPage)}
-        className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50"
-      >
-        <FaChevronRight />
-      </button>
+    <div className="ml-12">
+      <div className="bg-gray-800 shadow-lg rounded-lg overflow-hidden" style={{ width: '260px', height: '627px', opacity: 0.8 }}>
+        <div className="px-6 py-4 text-gray-300">
+          <h2 className="text-xl font-bold">How to get GlobalPoints:</h2>
+          <p className="mt-2">Complete Map 1st: +2000 Points</p>
+          <p className="mt-2">Beat SR: +1000 Points</p>
+          <p className="mt-2">Complete Map: +31 Points</p>
+          <p className="mt-2">Beat PB: +20 Points</p>
+          <div className="my-6"></div>
+          <h2 className="text-xl font-bold">Ingame Ranks:</h2>
+          <p className="mt-2 text-purple-400">&#91;<span className="text-purple-500">PRO</span>&#93; - Top 0.05%</p>
+          <p className="mt-2 text-red-500">&#91;OG&#93; - Top 0.1%</p>
+          <p className="mt-2 text-orange-500">&#91;Legend&#93; - Top 2.5%</p>
+          <p className="mt-2 text-green-300">&#91;Master&#93; - Top 10%</p>
+          <p className="mt-2 text-red-500">&#91;Diamond&#93; - Top 20%</p>
+          <p className="mt-2 text-blue-500">&#91;Platinum&#93; - Top 30%</p>
+          <p className="mt-2 text-yellow-400">&#91;Gold&#93; - Top 40%</p>
+          <p className="mt-2 text-gray-500">&#91;Silver&#93; - Top 50%</p>
+          <p className="mt-2 text-brown-300">&#91;Bronze&#93; - Top 99%</p>
+        </div>
+      </div>
     </div>
   </div>
 )}
+
 
   
   {activeSection === 'arena' && (
@@ -591,7 +627,7 @@ export default function Home() {
           )}
         </div>
 <footer className="w-full text-center py-2 bg-gray-900 text-white text-sm absolute bottom-0 left-0">
-  <p className="animate-slide-in-once">This website was created by JKE (c)</p>
+  <p className="animate-slide-in-once">This website was created by JKE &copy;</p>
 </footer>
 
 
