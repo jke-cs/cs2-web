@@ -63,7 +63,7 @@ export default function Home() {
   style={{
     height: '40px',
     width: 'calc(100% - 60px)', 
-    marginRight: '16px', 
+    marginRight: '20px', 
     position: 'fixed',
     boxSizing: 'border-box', 
     background: 'linear-gradient(to right, #e6b3ff, #660066)'
@@ -193,6 +193,8 @@ export default function Home() {
     {activeSection === 'home' && (
  
       <>
+ 
+
               <a
                 className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_blank"
@@ -347,53 +349,52 @@ export default function Home() {
                   Map: surf_boreas
                 </p>
               </a>
+
             </>
           )}
 
  
 <div className="flex flex-col space-y-4 absolute right-8 top-24">
-<div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
-  <p className="text-center text-lg font-semibold mb-4">
-  </p>
-  <div className="text-sm">
-    <h3 className="font-semibold mb-2">Roadmap:</h3>
-    <ul className="list-disc list-inside">
-      <li>Fix say !r actually resetting the player</li>
-      <li>Implement Leaderboard on the website</li>
-      <li>Implement Credit System</li>
-      <li>Together with the Credit System Players are able to earn Credits and spend them on cases on the website</li>
-      <li>Add different roles like Coach, Helper, Mod...</li>
-      <li>Create new Global Points Ranking System</li>
-      <li>Polish CVARS to get smoother experience!!!!!</li>
-    </ul>
+  <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50 animate-slide-in-and-stay delay-0">
+    <p className="text-center text-lg font-semibold mb-4"></p>
+    <div className="text-sm">
+      <h3 className="font-semibold mb-2">Roadmap:</h3>
+      <ul className="list-disc list-inside">
+        <li>Fix say !r actually resetting the player</li>
+        <li>Implement Leaderboard on the website</li>
+        <li>Implement Credit System</li>
+        <li>Together with the Credit System Players are able to earn Credits and spend them on cases on the website</li>
+        <li>Add different roles like Coach, Helper, Mod...</li>
+        <li>Create new Global Points Ranking System</li>
+        <li>Polish CVARS to get smoother experience!!!!!</li>
+      </ul>
+    </div>
   </div>
-</div>
-  
-<div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
-  <p className="text-center text-lg font-semibold mb-4">
-  </p>
-  <div className="text-sm">
-    <h3 className="font-semibold mb-2">Suggestions:</h3>
-    <ul className="list-disc list-inside">
-      <li>If you have any suggestions for the web or surf, use the Threads on the Discord Server</li>
-    </ul>
+
+  <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50 animate-slide-in-and-stay delay-500">
+    <p className="text-center text-lg font-semibold mb-4"></p>
+    <div className="text-sm">
+      <h3 className="font-semibold mb-2">Suggestions:</h3>
+      <ul className="list-disc list-inside">
+        <li>If you have any suggestions for the web or surf, use the Threads on the Discord Server</li>
+      </ul>
+    </div>
+  </div>
+
+  <div className="bg-orange-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50 animate-slide-in-and-stay delay-1000">
+    <p className="text-center text-lg font-semibold mb-4"></p>
+    <div className="text-sm">
+      <h3 className="font-semibold mb-2">Credits:</h3>
+      <ul className="list-disc list-inside">
+        <li>Credits to Bagoot for giving so much inspiration</li>
+        <li>Credits to Waycbenne very nice guy</li>
+        <li>If you want to contribute to the Project checkout the GitHub</li>
+        <li><a href="https://github.com/jke-c" className="text-white underline">https://github.com/jke-c</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 
-<div className="bg-orange-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
-  <p className="text-center text-lg font-semibold mb-4">
-  </p>
-  <div className="text-sm">
-    <h3 className="font-semibold mb-2">Credits:</h3>
-    <ul className="list-disc list-inside">
-      <li>Credits to Bagoot for giving so much inspiration</li>
-      <li>Credits to Waycbenne very nice guy</li>
-      <li>If you want to contribute to the Project checkout the GitHub</li>
-      <li><a href="https://github.com/jke-c" className="text-white underline">https://github.com/jke-c</a></li>
-    </ul>
-  </div>
-</div>
-  </div>
 
 
 
@@ -427,8 +428,8 @@ export default function Home() {
 )}
   
 {activeSection === 'best' && (
-  <div className="container mx-auto px-4 py-8 ml-[-315px]"> {/* Zentriert den Inhalt */}
-    <div className="mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden" style={{ width: '1000px' }}> {/* Feste Breite von 1000px und zentriert */}
+  <div className="container mx-auto px-4 py-8 ml-[-315px]"> 
+    <div className="mx-auto bg-gray-800 shadow-lg rounded-lg overflow-hidden" style={{ width: '1000px' }}> 
       <table className="w-full table-fixed divide-y divide-gray-700">
         <thead className="bg-gray-900">
           <tr>
@@ -452,7 +453,7 @@ export default function Home() {
         </tbody>
       </table>
     </div>
-    <div className="mt-4 flex justify-between items-center" style={{ width: '1000px', margin: '0 auto' }}> {/* Zentriert den Pagination-Container */}
+    <div className="mt-4 flex justify-between items-center" style={{ width: '1000px', margin: '0 auto' }}> 
       <button
         onClick={() => paginate(currentPage - 1)}
         disabled={currentPage === 1}
@@ -589,9 +590,10 @@ export default function Home() {
             </div>
           )}
         </div>
-        <footer className="w-full text-center py-2 bg-[rgba(255,255,255,0.8)] text-black absolute bottom-0 left-0">
-  <p>This website was created by JKE (c)</p>
+<footer className="w-full text-center py-2 bg-gray-900 text-white text-sm absolute bottom-0 left-0">
+  <p className="animate-slide-in-once">This website was created by JKE (c)</p>
 </footer>
+
 
 
 
