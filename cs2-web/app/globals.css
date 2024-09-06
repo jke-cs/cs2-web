@@ -32,6 +32,59 @@ body {
   }
 }
 
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1; 
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 1s ease-out;
+}
+
+@keyframes slide-in-and-stay {
+  0% {
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1; 
+  }
+  90% {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-in-and-stay {
+  animation: slide-in-and-stay 20s ease-in-out forwards;
+}
+@keyframes slide-in-once {
+  0% {
+    transform: translateX(100%); 
+    opacity: 0; 
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1; 
+  }
+}
+
+.animate-slide-in-once {
+  animation: slide-in-once 1s ease-in-out forwards; 
+}
+
+
 
 /* styles/globals.css */
 .player-stats-table {
