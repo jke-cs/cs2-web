@@ -14,6 +14,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Rename .env.local.example to -> .env.local
+Paste your DB credentials from you SharpTimer
+
+PlayerStats table name may differ from SharpTimer version sometimes (playerstats) latest(0.3.0q) the table name is PlayerStats
+
 First, run the development server:
 
 ```bash
@@ -61,8 +66,19 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Preview:
 
+# Demo Website
+
+https://cs2surf.pro
+
 <div align="center">
-<a href="https://i.gyazo.com/20a3f31352da28432222bbef849150d5.png">
-<img src="https://i.gyazo.com/20a3f31352da28432222bbef849150d5.png" />
+<a href="https://i.gyazo.com/bc9c32a382042d7eb00c6f3e23a46c75.png">
+<img src="https://i.gyazo.com/bc9c32a382042d7eb00c6f3e23a46c75.png" />
+</a>
+</div>
+
+
+<div align="center">
+<a href="https://i.gyazo.com/c183cf0fc8d6fcb92a6f37825ab52439.png">
+<img src="https://i.gyazo.com/c183cf0fc8d6fcb92a6f37825ab52439.png" />
 </a>
 </div>
