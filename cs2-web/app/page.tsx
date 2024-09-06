@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { FaCopy } from 'react-icons/fa'; 
+import { FaCopy } from 'react-icons/fa';
 import { useEffect } from 'react';
 import axios from 'axios';
 
@@ -11,6 +11,9 @@ interface PlayerData {
   SteamID: string;
   GlobalPoints: number;
 }
+function closeHeader() {
+  document.getElementById('header').style.display = 'none';
+}
 
 export default function Home() {
   const [data, setData] = useState<any[]>([]);
@@ -18,18 +21,6 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [tableData, setTableData] = useState<any[]>([]);
 
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('/api/route'); 
-      setTableData(response.data);
-    } catch (error) {
-      console.error('Failed to fetch data:', error);
-    }
-  };
-
-  fetchData();
-}, []);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -39,14 +30,46 @@ useEffect(() => {
     <div className="flex relative min-h-screen overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-[url('/bg-cbble.svg')] bg-cover bg-center z-[-1]"></div>
       
-<header className="w-full bg-red-600 text-white text-center py-1.5 fixed top-0 left-[65px] z-50 opacity-80 " style={{ height: '40px' }}>
-  50€ giveaway for the player with the most global points in one month. Join the Discord for more infos.
+<header
+  id="header"
+  className="text-white text-center py-1.5 fixed top-0 left-16 z-50 opacity-80"
+  style={{
+    height: '40px',
+    width: 'calc(100% - 60px)', 
+    marginRight: '16px', 
+    position: 'fixed',
+    boxSizing: 'border-box', 
+    background: 'linear-gradient(to right, #e6b3ff, #660066)'
+  }}
+>
+  <span
+    className="close-btn cursor-pointer text-white text-xl"
+    onClick={closeHeader}
+    style={{
+      position: 'absolute',
+      right: '10px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+    }}
+  >
+    &#x2715;
+  </span>
+  <span>
+    50€ giveaway for the player with the most global points in one month. Join the <a href="https://discord.gg/n4xCDWrQRB" className="text-white underline">Discord</a> for more infos.
+  </span>
 </header>
 
 
+
+
+
+
+
+
+      {/* Navigationsleiste */}
       <nav className="fixed top-0 left-0 h-full w-16 bg-gray-900 flex flex-col items-center py-4">
         <a 
-          href="#section1" 
+          href="#SURF" 
           className={`group mb-6 p-2 rounded-lg border border-transparent transition-colors ${activeSection === 'home' ? 'text-white bg-gray-100 border-gray-300 dark:bg-neutral-800/30 dark:border-neutral-700' : 'text-gray-400 hover:text-white hover:bg-gray-100 hover:border-gray-300 hover:dark:bg-neutral-800/30 hover:dark:border-neutral-700'}`}
           onClick={() => setActiveSection('home')}
         >
@@ -59,7 +82,7 @@ useEffect(() => {
           <p className="text-white text-xs mt-1">SURF</p>
         </a>
         <a 
-          href="#section2" 
+          href="#KZ" 
           className={`group mb-6 p-2 rounded-lg border border-transparent transition-colors ${activeSection === 'person' ? 'text-white bg-gray-100 border-gray-300 dark:bg-neutral-800/30 dark:border-neutral-700' : 'text-gray-400 hover:text-white hover:bg-gray-100 hover:border-gray-300 hover:dark:bg-neutral-800/30 hover:dark:border-neutral-700'}`}
           onClick={() => setActiveSection('person')}
         >
@@ -73,7 +96,7 @@ useEffect(() => {
         </a>
       
         <a 
-          href="#section3" 
+          href="#DM" 
           className={`group mb-6 p-2 rounded-lg border border-transparent transition-colors ${activeSection === 'dm' ? 'text-white bg-gray-100 border-gray-300 dark:bg-neutral-800/30 dark:border-neutral-700' : 'text-gray-400 hover:text-white hover:bg-gray-100 hover:border-gray-300 hover:dark:bg-neutral-800/30 hover:dark:border-neutral-700'}`}
           onClick={() => setActiveSection('dm')}
         >
@@ -87,7 +110,7 @@ useEffect(() => {
         </a>
       
           <a 
-  			href="#section5" 
+  			href="#ARENA" 
  			className={`group mb-6 p-2 rounded-lg border border-transparent transition-colors ${activeSection === 'arena' ? 'text-white bg-gray-100 border-gray-300 dark:bg-neutral-800/30 dark:border-neutral-700' : 'text-gray-400 hover:text-white hover:bg-gray-100 hover:border-gray-300 hover:dark:bg-neutral-800/30 hover:dark:border-neutral-700'}`}
   			onClick={() => setActiveSection('arena')}
 		>
@@ -114,7 +137,7 @@ useEffect(() => {
         </a>
         
         <a 
-          href="#section6" 
+          href="#BEST" 
           className={`group mb-6 p-2 rounded-lg border border-transparent transition-colors ${activeSection === 'best' ? 'text-white bg-gray-100 border-gray-300 dark:bg-neutral-800/30 dark:border-neutral-700' : 'text-gray-400 hover:text-white hover:bg-gray-100 hover:border-gray-300 hover:dark:bg-neutral-800/30 hover:dark:border-neutral-700'}`}
           onClick={() => setActiveSection('best')}
         >
@@ -129,7 +152,7 @@ useEffect(() => {
 
 
         <a 
-          href="#section4" 
+          href="#SETTINGS" 
           className={`group mb-6 p-2 rounded-lg border border-transparent transition-colors ${activeSection === 'settings' ? 'text-white bg-gray-100 border-gray-300 dark:bg-neutral-800/30 dark:border-neutral-700' : 'text-gray-400 hover:text-white hover:bg-gray-100 hover:border-gray-300 hover:dark:bg-neutral-800/30 hover:dark:border-neutral-700'}`}
           onClick={() => setActiveSection('settings')}
         >
@@ -137,12 +160,13 @@ useEffect(() => {
         </a>
       </nav>
 
-      <main className="flex-1 min-h-screen flex flex-col items-center justify-because p-24 ml-16 relative z-10">
+      <main className="flex-1 min-h-screen flex flex-col items-center justify-start p-24 ml-16 relative z-10">
       
 
   <div className="relative z-[-1] flex place-items-center before:absolute before:h-[10px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-0 after:h-[100px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]"></div>
 
-  <div className="mb-24 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+
+ <div className="w-full max-w-6xl grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {activeSection === 'home' && (
       <>
               <a
@@ -190,8 +214,8 @@ useEffect(() => {
                 <Image
                   src="/surf_nyx.svg"
                   alt="Surf Nyx"
-                  width={400}
-                  height={100}
+                  width={400} 
+                  height={100} 
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -221,7 +245,7 @@ useEffect(() => {
                 <Image
                   src="/surf_me.svg"
                   alt="Surf Me"
-                  width={400}
+                  width={400} 
                   height={100} 
                   className="mb-3"
                 />
@@ -283,8 +307,7 @@ useEffect(() => {
                 <Image
                   src="/surf_boreas.svg"
                   alt="Surf Boreas"
-                  width={400}
-                  height={100}
+                  width={400} 
                   className="mb-3"
                 />
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -301,7 +324,9 @@ useEffect(() => {
               </a>
             </>
           )}
+        {/* Discord Widget */}
 <div className="absolute top-24 left-0 ml-8">
+
 <iframe 
   src="https://discord.com/widget?id=371718546121556002&theme=dark" 
   width="350" 
@@ -311,8 +336,9 @@ useEffect(() => {
   sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
 </iframe>
 </div>
-  
-<div className="absolute top-24 right-8 bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
+ 
+<div className="flex flex-col space-y-4 absolute right-8 top-24">
+<div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
   <p className="text-center text-lg font-semibold mb-4">
   </p>
   <div className="text-sm">
@@ -322,14 +348,25 @@ useEffect(() => {
       <li>Implement Leaderboard on the website</li>
       <li>Implement Credit System</li>
       <li>Together with the Credit System Players are able to earn Credits and spend them on cases on the website</li>
-      <li>Add different roles like Coach,Helper, Mod...</li>
+      <li>Add different roles like Coach, Helper, Mod...</li>
       <li>Create new Global Points Ranking System</li>
-      <li>Polish CVARS to get smoother experience</li>
+      <li>Polish CVARS to get smoother experience!!!!!</li>
+    </ul>
+  </div>
+</div>
+  
+<div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
+  <p className="text-center text-lg font-semibold mb-4">
+  </p>
+  <div className="text-sm">
+    <h3 className="font-semibold mb-2">Suggestions:</h3>
+    <ul className="list-disc list-inside">
+      <li>If you have any suggestions for the web or surf, use the Threads on the Discord Server</li>
     </ul>
   </div>
 </div>
 
-<div className="absolute right-8 bg-orange-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50" style={{ top: '70%' }}>
+<div className="bg-orange-800 text-white p-6 rounded-lg shadow-lg max-w-xs z-20 opacity-50">
   <p className="text-center text-lg font-semibold mb-4">
   </p>
   <div className="text-sm">
@@ -338,10 +375,14 @@ useEffect(() => {
       <li>Credits to Bagoot for giving so much inspiration</li>
       <li>Credits to Waycbenne very nice guy</li>
       <li>If you want to contribute to the Project checkout the GitHub</li>
-      <li>https://gitgub.com/jke-cs</li>
+      <li><a href="https://github.com/jke-c" className="text-white underline">https://github.com/jke-c</a></li>
     </ul>
   </div>
 </div>
+  </div>
+
+<div className="relative z-[-50] flex place-items-center before:absolute before:bottom-[-300px] before:left-[-600px] before:h-[20px] before:w-full before:rounded-full before:bg-gradient-radial before:from-purple-700 before:to-transparent before:blur-3xl before:opacity-80 before:content-[''] after:absolute after:bottom-[-300px] after:left-[-600px] after:-z-0 after:h-[200px] after:w-full after:bg-gradient-conic after:from-purple-500 after:via-purple-700 after:blur-3xl after:opacity-20 after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-purple-900 before:dark:opacity-20 after:dark:from-purple-800 after:dark:via-purple-600 after:dark:opacity-12 sm:before:w-[600px] sm:after:w-[300px] before:lg:h-[400px]"></div>
+
 
 
 
@@ -372,28 +413,6 @@ useEffect(() => {
   
 {activeSection === 'best' && (
   <div className="overflow-x-auto">
-    <table className="min-w-full divide-y divide-gray-200">
-      <thead className="bg-gray-50">
-        <tr>
-          {tableData[0] && Object.keys(tableData[0]).map((key) => (
-            <th key={key} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              {key}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody className="bg-white divide-y divide-gray-200">
-        {tableData.map((row, index) => (
-          <tr key={index}>
-            {Object.values(row).map((value, i) => (
-              <td key={i} className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {value}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
   </div>
 )}
 
@@ -411,7 +430,7 @@ useEffect(() => {
       </span>
     </h2>
     <Image
-      src="/aim_redline.svg" 
+      src="/aim_redline.svg"
       alt="Arena"
       width={400}
       height={100} 
@@ -446,8 +465,8 @@ useEffect(() => {
               <Image
                 src="/kz_skytower.svg"
                 alt="Mirage"
-                width={400} 
-                height={100}
+                width={400}
+                height={100} 
                 className="mb-3"
               />
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -479,8 +498,8 @@ useEffect(() => {
               <Image
                 src="/mirage.svg"
                 alt="DM #1"
-                width={400}
-                height={100}
+                width={400} 
+                height={100} 
                 className="mb-3"
               />
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
