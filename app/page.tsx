@@ -475,11 +475,11 @@ export default function Home() {
 
               if (currentPage === 1) {
                 if (index === 0) {
-                  bgColor = 'bg-purple-500 text-purple-100'; // Rank 1
+                  bgColor = 'bg-orange-500 text-orange-100'; // Rank 1
                 } else if (index === 1) {
-                  bgColor = 'bg-red-500 text-red-100'; // Rank 2
+                  bgColor = 'bg-purple-500 text-purple-100'; // Rank 2
                 } else if (index === 2) {
-                  bgColor = 'bg-orange-500 text-orange-100'; // Rank 3
+                  bgColor = 'bg-red-500 text-red-100'; // Rank 3
                 }
               }
 
@@ -547,9 +547,9 @@ export default function Home() {
           <p className="mt-2">Beat PB: +20 Points</p>
           <div className="my-6"></div>
           <h2 className="text-xl font-bold">Ingame Ranks:</h2>
-          <p className="mt-2 text-purple-400">&#91;<span className="text-purple-500">PRO</span>&#93; - Top 0.05%</p>
-          <p className="mt-2 text-red-500">&#91;OG&#93; - Top 0.1%</p>
-          <p className="mt-2 text-orange-500">&#91;Legend&#93; - Top 2.5%</p>
+          <p className="mt-2 text-orange-500">&#91;<span className="text-orange-500">Legend</span>&#93; - Top 0.05%</p>
+          <p className="mt-2 text-purple-500">&#91;PRO&#93; - Top 0.1%</p>
+          <p className="mt-2 text-red-500">&#91;OG&#93; - Top 2.5%</p>
           <p className="mt-2 text-green-300">&#91;Master&#93; - Top 10%</p>
           <p className="mt-2 text-red-500">&#91;Diamond&#93; - Top 20%</p>
           <p className="mt-2 text-blue-500">&#91;Platinum&#93; - Top 30%</p>
