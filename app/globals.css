@@ -32,6 +32,68 @@ body {
   }
 }
 
+.star-background {
+  background-image: url('/star.svg');
+  background-size: 20% 20%; /* Setzt die Größe der Sterne auf 20% der Originalgröße */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.animate-star {
+  animation: starScale 800ms ease infinite;
+}
+
+@keyframes starScale {
+  from, to {
+    transform: rotate(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* Brenn-Effekt-Klasse */
+.burning-effect {
+  animation: burning 2s infinite;
+  position: relative;
+}
+
+/* Optional: Hinzufügen von animierten Flammen mit einem Pseudo-Element */
+.burning-effect::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: radial-gradient(circle, rgba(255,69,0,0.8) 0%, rgba(255,140,0,0) 70%);
+  animation: flames 0.5s infinite;
+}
+
+/* Keyframes für die Flammenbewegung */
+@keyframes flames {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+
+
+
 @keyframes slide-in {
   0% {
     transform: translateX(100%); 
@@ -127,4 +189,10 @@ body {
 .global-points-heading {
   text-align: left;
   padding-left: 20px;
+}
+
+
+/* Glow-Effekt-Klasse für orange */
+.glow-orange {
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Orange Glow */
 }
