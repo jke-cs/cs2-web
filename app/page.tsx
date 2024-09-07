@@ -5,6 +5,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { FaPlay } from 'react-icons/fa';
 import { FaCopy, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import axios from 'axios';
+import { CSSProperties } from 'react';  // Importieren von CSSProperties
 
 interface PlayerData {
   PlayerName: string;
@@ -391,7 +392,6 @@ export default function Home() {
       <h3 className="font-semibold mb-2">Roadmap:</h3>
       <ul className="list-disc list-inside">
         <li>Fix say !r actually resetting the player</li>
-        <li>Implement Leaderboard on the website</li>
         <li>Implement Credit System</li>
         <li>Together with the Credit System Players are able to earn Credits and spend them on cases on the website</li>
         <li>Add different roles like Coach, Helper, Mod...</li>
@@ -457,38 +457,59 @@ export default function Home() {
 
 )}
   
-{activeSection === 'best' && (
+  {activeSection === 'best' && (
   <div className="container mx-auto px-4 py-8 flex">
     <div className="flex-grow">
-
       <div className="bg-gray-800 shadow-lg rounded-lg overflow-hidden" style={{ width: '800px' }}>
         <table className="w-full table-fixed divide-y divide-gray-700">
           <thead className="bg-gray-900">
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Rank</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Player Name</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Global Points</th>
+              <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">Player Name</th>
+              <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-300 uppercase tracking-wider">Global Points</th>
             </tr>
           </thead>
           <tbody className="bg-gray-800 divide-y divide-gray-700">
             {currentPlayers.map((player, index) => {
-              let bgColor = 'bg-green-100 text-green-800'; // Default color
-              if (index === 0) {
-                bgColor = 'bg-purple-500 text-purple-100'; // Rank 1
-              } else if (index === 1) {
-                bgColor = 'bg-red-500 text-red-100'; // Rank 2
-              } else if (index === 2) {
-                bgColor = 'bg-orange-500 text-orange-100'; // Rank 3
+              let bgColor = 'bg-green-100 text-green-800';
+
+              if (currentPage === 1) {
+                if (index === 0) {
+                  bgColor = 'bg-purple-500 text-purple-100'; // Rank 1
+                } else if (index === 1) {
+                  bgColor = 'bg-red-500 text-red-100'; // Rank 2
+                } else if (index === 2) {
+                  bgColor = 'bg-orange-500 text-orange-100'; // Rank 3
+                }
               }
+
+              const pointStyle: CSSProperties = {
+                width: player.GlobalPoints.toString().length === 4 ? '48px' : undefined,
+                textAlign: 'center'
+              };
 
               return (
                 <tr key={player.SteamID} className="hover:bg-gray-700 transition-colors">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300">{indexOfFirstPlayer + index + 1}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-300">{player.PlayerName}</td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">
-                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${bgColor}`}>
-                      {player.GlobalPoints}
-                    </span>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-300">
+                    <a 
+                      href={`https://steamcommunity.com/profiles/${player.SteamID}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="hover:underline text-blue-400"
+                    >
+                      {player.PlayerName}
+                    </a>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right">
+                    <div className="flex justify-end">
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${bgColor}`}
+                        style={pointStyle}
+                      >
+                        {player.GlobalPoints}
+                      </span>
+                    </div>
                   </td>
                 </tr>
               );
@@ -540,6 +561,10 @@ export default function Home() {
     </div>
   </div>
 )}
+
+
+
+
 
 
   
