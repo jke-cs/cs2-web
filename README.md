@@ -18,7 +18,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 Rename .env.local.example to -> .env.local
-Paste your DB credentials from you SharpTimer
+Paste your DB credentials from your SharpTimer
 
 PlayerStats table name may differ from SharpTimer version sometimes (playerstats) latest(0.3.0q) the table name is PlayerStats
 
