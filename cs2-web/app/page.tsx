@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FaPlay } from 'react-icons/fa';
 import { FaCopy, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import axios from 'axios';
 
@@ -212,13 +213,19 @@ export default function Home() {
                   height={100}
                   className="mb-3"
                 />
-                <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                   connect play.cs2surf.pro:27015
-                  <CopyToClipboard text="play.cs2surf.pro:27015" onCopy={() => alert('Copied to clipboard!')}>
+                  <CopyToClipboard text="connect play.cs2surf.pro:27015" onCopy={() => alert('Copied to clipboard!')}>
                     <button className="ml-2 text-gray-500 hover:text-gray-700">
                       <FaCopy />
                     </button>
                   </CopyToClipboard>
+                  <a
+          href="steam://connect/87.182.175.106:27015?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
                 </p>
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
                   Map: surf_utopia
@@ -243,13 +250,19 @@ export default function Home() {
                   height={100} 
                   className="mb-3"
                 />
-                <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                   connect play.cs2surf.pro:27017
-                  <CopyToClipboard text="play.cs2surf.pro:27017" onCopy={() => alert('Copied to clipboard!')}>
+                  <CopyToClipboard text="connect play.cs2surf.pro:27017" onCopy={() => alert('Copied to clipboard!')}>
                     <button className="ml-2 text-gray-500 hover:text-gray-700">
                       <FaCopy />
                     </button>
                   </CopyToClipboard>
+                  <a
+          href="steam://connect/87.182.175.106:27017?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
                 </p>
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
                   Map: surf_nyx
@@ -274,13 +287,19 @@ export default function Home() {
                   height={100} 
                   className="mb-3"
                 />
-                <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                   connect play.cs2surf.pro:27018
-                  <CopyToClipboard text="play.cs2surf.pro:27018" onCopy={() => alert('Copied to clipboard!')}>
+                  <CopyToClipboard text="connect play.cs2surf.pro:27018" onCopy={() => alert('Copied to clipboard!')}>
                     <button className="ml-2 text-gray-500 hover:text-gray-700">
                       <FaCopy />
                     </button>
                   </CopyToClipboard>
+                  <a
+          href="steam://connect/87.182.175.106:27018?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
                 </p>
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
                   Map: surf_me
@@ -305,13 +324,19 @@ export default function Home() {
                   height={100}
                   className="mb-3"
                 />
-                <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                   connect play.cs2surf.pro:27019
-                  <CopyToClipboard text="play.cs2surf.pro:27019" onCopy={() => alert('Copied to clipboard!')}>
+                  <CopyToClipboard text="connect play.cs2surf.pro:27019" onCopy={() => alert('Copied to clipboard!')}>
                     <button className="ml-2 text-gray-500 hover:text-gray-700">
                       <FaCopy />
                     </button>
                   </CopyToClipboard>
+                  <a
+          href="steam://connect/87.182.175.106:27019?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
                 </p>
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
                   Map: surf_rookie
@@ -336,13 +361,19 @@ export default function Home() {
                   height={100} 
                   className="mb-3"
                 />
-                <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                   connect play.cs2surf.pro:27016
-                  <CopyToClipboard text="play.cs2surf.pro:27016" onCopy={() => alert('Copied to clipboard!')}>
+                  <CopyToClipboard text="connect play.cs2surf.pro:27016" onCopy={() => alert('Copied to clipboard!')}>
                     <button className="ml-2 text-gray-500 hover:text-gray-700">
                       <FaCopy />
                     </button>
                   </CopyToClipboard>
+                  <a
+          href="steam://connect/87.182.175.106:27016?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
                 </p>
                 <p className="m-0 max-w-[30ch] text-sm opacity-50">
                   Map: surf_boreas
@@ -531,13 +562,19 @@ export default function Home() {
       height={100} 
       className="mb-3"
     />
-    <p className="m-0 max-w-[30ch] text-sm opacity-50">
+    <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
       connect play.cs2surf.pro:27024
-      <CopyToClipboard text="play.cs2surf.pro:27024" onCopy={() => alert('Copied to clipboard!')}>
+      <CopyToClipboard text="connect play.cs2surf.pro:27024" onCopy={() => alert('Copied to clipboard!')}>
         <button className="ml-2 text-gray-500 hover:text-gray-700">
           <FaCopy />
         </button>
       </CopyToClipboard>
+      <a
+          href="steam://connect/87.182.175.106:27024?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
     </p>
     <p className="m-0 max-w-[30ch] text-sm opacity-50">
       Map: aim_redline
@@ -558,22 +595,28 @@ export default function Home() {
                 </span>
               </h2>
               <Image
-                src="/kz_skytower.svg"
+                src="/kz_grotto.svg"
                 alt="Mirage"
                 width={400}
                 height={100} 
                 className="mb-3"
               />
-              <p className="m-0 max-w-[30ch] text-sm opacity-50">
+              <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                 connect play.cs2surf.pro:27021
-                <CopyToClipboard text="play.cs2surf.pro:27021" onCopy={() => alert('Copied to clipboard!')}>
+                <CopyToClipboard text="connect play.cs2surf.pro:27021" onCopy={() => alert('Copied to clipboard!')}>
                   <button className="ml-2 text-gray-500 hover:text-gray-700">
                     <FaCopy />
                   </button>
                 </CopyToClipboard>
+                <a
+          href="steam://connect/87.182.175.106:27021?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
               </p>
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                Map: kz_skytower
+                Map: kz_grotto
               </p>
             </a>
           )}
@@ -597,13 +640,19 @@ export default function Home() {
                 height={100} 
                 className="mb-3"
               />
-              <p className="m-0 max-w-[30ch] text-sm opacity-50">
+              <p className="m-0 max-w-[30ch] text-sm opacity-50 flex items-center">
                 connect play.cs2surf.pro:27020
-                <CopyToClipboard text="play.cs2surf.pro:27020" onCopy={() => alert('Copied to clipboard!')}>
+                <CopyToClipboard text="connect play.cs2surf.pro:27020" onCopy={() => alert('Copied to clipboard!')}>
                   <button className="ml-2 text-gray-500 hover:text-gray-700">
                     <FaCopy />
                   </button>
                 </CopyToClipboard>
+                <a
+          href="steam://connect/87.182.175.106:27020?appid=730"
+          className="ml-2 text-gray-500 hover:text-gray-700"
+        >
+          <FaPlay />
+        </a>
               </p>
               <p className="m-0 max-w-[30ch] text-sm opacity-50">
                 Map: mirage
