@@ -472,10 +472,12 @@ export default function Home() {
           <tbody className="bg-gray-800 divide-y divide-gray-700">
             {currentPlayers.map((player, index) => {
               let bgColor = 'bg-green-100 text-green-800';
+              let glowClass = '';
 
               if (currentPage === 1) {
                 if (index === 0) {
                   bgColor = 'bg-orange-500 text-orange-100'; // Rank 1
+                  glowClass = 'glow-orange'; // Glow effect for rank 1
                 } else if (index === 1) {
                   bgColor = 'bg-purple-500 text-purple-100'; // Rank 2
                 } else if (index === 2) {
@@ -504,7 +506,7 @@ export default function Home() {
                   <td className="px-6 py-4 whitespace-nowrap text-right">
                     <div className="flex justify-end">
                       <span
-                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${bgColor}`}
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${bgColor} ${glowClass}`} // Apply glow effect here
                         style={pointStyle}
                       >
                         {player.GlobalPoints}
@@ -561,6 +563,9 @@ export default function Home() {
     </div>
   </div>
 )}
+
+
+
 
 
 
