@@ -5,10 +5,13 @@
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/jke-cs/cs2-web/main?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/jke-cs/cs2-web?style=for-the-badge)
 
+
+> [!NOTE]
+>This website is in development use with caution.
 # cs2-web
 
 
-A next.js Website, planning to support Sharptimer
+A next.js Website,  supporting [Sharptimer ](https://github.com/Letaryat/poor-sharptimer)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
