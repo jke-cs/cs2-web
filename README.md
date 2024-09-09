@@ -56,7 +56,7 @@ rpm run start
 
 # TODO List
 - [ ] Credit system
-  - [ ] Earn credits by playing / DU_Utlities used to maesure playtime
+  - [ ] Earn credits by playing / DU_Utlities used to measure playtime
   - [ ] Open cases with credits
   - [ ] Spectator HUD
 - [ ] Assign VIP to Steam login
