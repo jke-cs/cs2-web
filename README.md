@@ -54,6 +54,16 @@ rpm run start
 
 ```
 
+# TODO List
+- [ ] Credit system
+  - [ ] Earn credits by playing / DU_Utlities used to maesure playtime
+  - [ ] Open cases with credits
+  - [ ] Spectator HUD
+- [ ] Assign VIP to Steam login
+  - [ ] Players will get VIP if they login
+- [ ] Add Playercount in Servercards
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
