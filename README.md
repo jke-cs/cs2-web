@@ -58,7 +58,6 @@ rpm run start
 - [ ] Credit system
   - [ ] Earn credits by playing / DU_Utlities used to measure playtime
   - [ ] Open cases with credits
-  - [ ] Spectator HUD
 - [ ] Assign VIP to Steam login
   - [ ] Players will get VIP if they login
 - [ ] Add Playercount in Servercards
