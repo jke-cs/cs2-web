@@ -10,6 +10,7 @@
 >This website is in development use with caution.
 # cs2-web
 
+Checkout the docs [DOCS](https://docs.cs2surf.pro)
 
 A next.js Website,  supporting [Sharptimer ](https://github.com/Letaryat/poor-sharptimer)
 
@@ -54,6 +55,7 @@ rpm run start
 
 ```
 
+
 # TODO List
 - [ ] Credit system
   - [ ] Earn credits by playing / DU_Utlities used to measure playtime
@@ -61,7 +63,6 @@ rpm run start
 - [ ] Assign VIP to Steam login
   - [ ] Players will get VIP if they login
 - [ ] Add Playercount in Servercards
-
 
 ## Learn More
 

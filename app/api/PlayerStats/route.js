@@ -6,6 +6,7 @@ export async function GET() {
     user: '',
     password: '',
     database: '',
+    port: 3306,
   });
 
   try {
