@@ -62,7 +62,7 @@ rpm run start
   - [ ] Open cases with credits
 - [ ] Assign VIP to Steam login
   - [ ] Players will get VIP if they login
-- [ ] Add Playercount in Servercards
+- [x] Add Playercount in Servercards
 
 ## Learn More
 
