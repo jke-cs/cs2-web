@@ -86,14 +86,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 https://cs2surf.pro
 
 <div align="center">
-<a href="https://i.gyazo.com/bc9c32a382042d7eb00c6f3e23a46c75.png">
-<img src="https://i.gyazo.com/bc9c32a382042d7eb00c6f3e23a46c75.png" />
+<a href="https://i.gyazo.com/73bb58cad1420c28f96fbc80c616ea48.jpg">
+<img src="https://i.gyazo.com/73bb58cad1420c28f96fbc80c616ea48.jpg" />
 </a>
 </div>
 
 
 <div align="center">
-<a href="https://i.gyazo.com/c183cf0fc8d6fcb92a6f37825ab52439.png">
-<img src="https://i.gyazo.com/c183cf0fc8d6fcb92a6f37825ab52439.png" />
+<a href="https://i.gyazo.com/b998a0e51aaf240ec412ed291a9f032b.png">
+<img src="https://i.gyazo.com/b998a0e51aaf240ec412ed291a9f032b.png" />
 </a>
 </div>
