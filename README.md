@@ -10,7 +10,7 @@
 >This website is in development use with caution.
 # cs2-web
 
-Checkout the docs [DOCS](https://docs.cs2surf.pro)
+Checkout the [DOCS](https://docs.cs2surf.pro)
 
 A next.js Website,  supporting [Sharptimer ](https://github.com/Letaryat/poor-sharptimer)
 
